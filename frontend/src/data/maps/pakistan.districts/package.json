@@ -1,0 +1,27 @@
+{
+	"name": "@svg-maps/pakistan.districts",
+	"version": "2.0.0",
+	"description": "Map of Pakistan districts",
+	"main": "index.js",
+	"types": "index.d.ts",
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"pakistan.districts.svg"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/VictorCazanave/svg-maps/tree/master/packages/pakistan.districts"
+	},
+	"keywords": [
+		"svg",
+		"map",
+		"pakistan",
+		"districts"
+	],
+	"author": "Noor Jafri <noor.jafri@live.com>",
+	"publishConfig": {
+		"access": "public"
+	},
+	"license": "Unlicense"
+}

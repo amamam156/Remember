@@ -1,0 +1,235 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Country {
+  id     String @id @default(uuid())
+  iso2   String @unique
+  name   String
+  latitude  Float?
+  longitude Float?
+
+  // 关系
+  admin1s  Admin1[]
+  cities   City[]
+  memories Memory[]
+  hotels   Hotel[]
+
+  @@map("countries")
+}
+
+model Admin1 {
+  id        String @id @default(uuid())
+  countryId String
+  name      String
+  latitude  Float?
+  longitude Float?
+
+  // 关系
+  country  Country  @relation(fields: [countryId], references: [id], onDelete: Cascade)
+  cities   City[]
+  memories Memory[]
+  hotels   Hotel[]
+
+  @@unique([countryId, name])
+  @@map("admin1s")
+}
+
+model City {
+  id             String  @id @default(uuid())
+  countryId      String
+  admin1Id       String?
+  name           String
+  isMunicipality Boolean @default(false) // 直辖市标识
+  latitude       Float?
+  longitude      Float?
+
+  // 关系
+  country  Country  @relation(fields: [countryId], references: [id], onDelete: Cascade)
+  admin1   Admin1?  @relation(fields: [admin1Id], references: [id], onDelete: SetNull)
+  memories Memory[]
+  hotels   Hotel[]
+
+  @@unique([countryId, admin1Id, name], name: "city_unique_key")
+  @@map("cities")
+}
+
+model Tag {
+  id   String @id @default(uuid())
+  name String @unique
+
+  // 关系
+  memoryTags MemoryTag[]
+
+  @@map("tags")
+}
+
+model User {
+  id       String @id @default(uuid())
+  name     String
+  username String @unique
+  password String
+
+  // 关系
+  memories       Memory[]
+  hotels         Hotel[]
+  hardTimeRecords HardTimeRecord[]
+
+  @@map("users")
+}
+
+model Memory {
+  id          String   @id @default(uuid())
+  createdById String
+  happenedAt  String // 存储日期字符串格式: YYYY-MM-DD
+  title       String
+  topic       String?
+  locationTxt String? // 位置文本描述
+  countryId   String
+  admin1Id    String?
+  cityId      String?
+  imageUrl    String? // 保留作为主图URL，向后兼容
+  latitude    Float?
+  longitude   Float?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // 关系
+  createdBy  User          @relation(fields: [createdById], references: [id], onDelete: Cascade)
+  country    Country       @relation(fields: [countryId], references: [id], onDelete: Cascade)
+  admin1     Admin1?       @relation(fields: [admin1Id], references: [id], onDelete: SetNull)
+  city       City?         @relation(fields: [cityId], references: [id], onDelete: SetNull)
+  memoryTags MemoryTag[]
+  images     MemoryImage[] // 新增：多图片支持
+
+  // 索引优化
+  @@index([countryId])
+  @@index([admin1Id])
+  @@index([cityId])
+  @@index([happenedAt])
+  @@index([createdById])
+  @@map("memories")
+}
+
+model MemoryImage {
+  id           String   @id @default(uuid())
+  memoryId     String
+  imageUrl     String
+  thumbnailUrl String? // 缩略图URL
+  order        Int      @default(0) // 图片顺序
+  createdAt    DateTime @default(now())
+
+  // 关系
+  memory Memory @relation(fields: [memoryId], references: [id], onDelete: Cascade)
+
+  @@index([memoryId])
+  @@map("memory_images")
+}
+
+model MemoryTag {
+  id       String @id @default(uuid())
+  memoryId String
+  tagId    String
+
+  // 关系
+  memory Memory @relation(fields: [memoryId], references: [id], onDelete: Cascade)
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@unique([memoryId, tagId])
+  @@map("memory_tags")
+}
+
+model Hotel {
+  id           String   @id @default(uuid())
+  createdById  String
+  name         String // 酒店名称
+  checkInDate  String // 入住日期 YYYY-MM-DD
+  checkOutDate String? // 离开日期 YYYY-MM-DD
+  locationTxt  String? // 地点文本描述
+  countryId    String
+  admin1Id     String?
+  cityId       String?
+  notes        String? // 备注
+  rating       Int? // 星级评分 1-5
+  latitude     Float?
+  longitude    Float?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // 关系
+  createdBy      User            @relation(fields: [createdById], references: [id], onDelete: Cascade)
+  country        Country         @relation(fields: [countryId], references: [id], onDelete: Cascade)
+  admin1         Admin1?         @relation(fields: [admin1Id], references: [id], onDelete: SetNull)
+  city           City?           @relation(fields: [cityId], references: [id], onDelete: SetNull)
+  hotelImages    HotelImage[]
+  roomCardImages RoomCardImage[]
+
+  // 索引优化
+  @@index([countryId])
+  @@index([admin1Id])
+  @@index([cityId])
+  @@index([checkInDate])
+  @@index([createdById])
+  @@map("hotels")
+}
+
+model HotelImage {
+  id           String   @id @default(uuid())
+  hotelId      String
+  imageUrl     String
+  thumbnailUrl String? // 缩略图URL
+  order        Int      @default(0) // 图片顺序
+  createdAt    DateTime @default(now())
+
+  // 关系
+  hotel Hotel @relation(fields: [hotelId], references: [id], onDelete: Cascade)
+
+  @@index([hotelId])
+  @@map("hotel_images")
+}
+
+model RoomCardImage {
+  id           String   @id @default(uuid())
+  hotelId      String
+  imageUrl     String
+  thumbnailUrl String? // 缩略图URL
+  order        Int      @default(0) // 图片顺序
+  createdAt    DateTime @default(now())
+
+  // 关系
+  hotel Hotel @relation(fields: [hotelId], references: [id], onDelete: Cascade)
+
+  @@index([hotelId])
+  @@map("room_card_images")
+}
+
+model HardTimeRecord {
+  id          String   @id @default(uuid())
+  createdById String
+  date        String   // 日期格式: YYYY-MM-DD
+  startTime   String   // 开始时间格式: HH:mm
+  endTime     String   // 结束时间格式: HH:mm
+  rating      Int      // 评分 1-10
+  duration    String   // 计算出的时长字符串，如 "2小时15分30秒"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // 关系
+  createdBy User @relation(fields: [createdById], references: [id], onDelete: Cascade)
+
+  // 索引
+  @@index([createdById])
+  @@index([date])
+  @@unique([date])
+  @@map("hard_time_records")
+}
+

@@ -1,0 +1,26 @@
+{
+	"name": "@svg-maps/puerto-rico",
+	"version": "2.0.0",
+	"description": "Map of Puerto Rico",
+	"main": "index.js",
+	"types": "index.d.ts",
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"puerto-rico.svg"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/VictorCazanave/svg-maps/tree/master/packages/puerto-rico"
+	},
+	"keywords": [
+		"svg",
+		"map",
+		"puerto rico"
+	],
+	"author": "Mihai Ro <mihai.roshca@gmail.com>",
+	"publishConfig": {
+		"access": "public"
+	},
+	"license": "CC-BY-4.0"
+}

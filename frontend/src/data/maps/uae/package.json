@@ -1,0 +1,26 @@
+{
+	"name": "@svg-maps/uae",
+	"version": "2.0.0",
+	"description": "Map of UAE",
+	"main": "index.js",
+	"types": "index.d.ts",
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"uae.svg"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/VictorCazanave/svg-maps/tree/master/packages/uae"
+	},
+	"keywords": [
+		"svg",
+		"map",
+		"uae"
+	],
+	"author": "Victor Cazanave <victor.cazanave@gmail.com>",
+	"publishConfig": {
+		"access": "public"
+	},
+	"license": "CC-BY-4.0"
+}

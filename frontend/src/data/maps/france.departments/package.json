@@ -1,0 +1,27 @@
+{
+	"name": "@svg-maps/france.departments",
+	"version": "2.0.0",
+	"description": "Map of France departments",
+	"main": "index.js",
+	"types": "index.d.ts",
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"france.departments.svg"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/VictorCazanave/svg-maps/tree/master/packages/france.departments"
+	},
+	"keywords": [
+		"svg",
+		"map",
+		"france",
+		"departments"
+	],
+	"author": "Victor Cazanave <victor.cazanave@gmail.com>",
+	"publishConfig": {
+		"access": "public"
+	},
+	"license": "CC-BY-4.0"
+}

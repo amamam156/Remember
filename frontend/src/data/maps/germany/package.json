@@ -1,0 +1,26 @@
+{
+	"name": "@svg-maps/germany",
+	"version": "2.0.0",
+	"description": "Map of Germany",
+	"main": "index.js",
+	"types": "index.d.ts",
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"germany.svg"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/VictorCazanave/svg-maps/tree/master/packages/germany"
+	},
+	"keywords": [
+		"svg",
+		"map",
+		"germany"
+	],
+	"author": "Victor Cazanave <victor.cazanave@gmail.com>",
+	"publishConfig": {
+		"access": "public"
+	},
+	"license": "CC-BY-4.0"
+}

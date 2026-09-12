@@ -1,0 +1,26 @@
+{
+	"name": "@svg-maps/thailand",
+	"version": "2.0.0",
+	"description": "Map of Thailand",
+	"main": "index.js",
+	"types": "index.d.ts",
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"thailand.svg"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/VictorCazanave/svg-maps/tree/master/packages/thailand"
+	},
+	"keywords": [
+		"svg",
+		"map",
+		"thailand"
+	],
+	"author": "Tae Noppakun Wongsrinoppakun <tae8838@gmail.com>",
+	"publishConfig": {
+		"access": "public"
+	},
+	"license": "CC-BY-4.0"
+}

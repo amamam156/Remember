@@ -1,0 +1,26 @@
+{
+	"name": "@svg-maps/sri-lanka",
+	"version": "2.0.0",
+	"description": "Map of Sri Lanka",
+	"main": "index.js",
+	"types": "index.d.ts",
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"sri-lanka.svg"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/VictorCazanave/svg-maps/tree/master/packages/sri-lanka"
+	},
+	"keywords": [
+		"svg",
+		"map",
+		"sri lanka"
+	],
+	"author": "Abiseban Pirapaharan <abiseban@gmail.com>",
+	"publishConfig": {
+		"access": "public"
+	},
+	"license": "CC-BY-4.0"
+}
