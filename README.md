@@ -24,15 +24,13 @@ Remember turns a camera roll into a browsable story. Add a date, place, note, an
 
 ## What it does
 
-- Builds a responsive, image-first timeline with multi-photo memories and tags.
-- Connects memories to countries, regions, cities, coordinates, and an interactive globe with photo-rich memory cards.
-- Keeps hotel stays, room-card photos, and trip notes beside the moments they belong to.
-- Supports private password access, JWT sessions, local uploads, thumbnails, and PWA installation.
-- Includes an optional showcase dataset with twelve fictional memories across North America, Europe, North Africa, Iceland, and Japan.
-- Supports multi-photo memories; the featured Tokyo entry uses a full-screen portrait cover followed by four gallery images.
-- Presents Johnson as a fictional fox digital person, with a local camera preview and familiar video-call controls.
-- Lets Johnson act as a natural-language smart-home companion for lights, climate, scenes, and other connected devices.
-- Supports voice-tone imitation for an approved reference voice, plus switchable personalities, tone, pacing, and speaking styles.
+Remember gives photos the context they usually lose. A memory can hold several images, a place, personal notes, tags, and details from the trip—such as a hotel stay or a room-card photo. Everything comes together in a visual timeline, while the globe offers another way to revisit the same stories by country, city, or exact location.
+
+The included demo follows two fox characters through twelve fictional memories, from a spring picnic in New York to a lantern-lit night in Tokyo. The Tokyo story is the most complete example: it opens with a full-screen portrait cover and continues as a four-photo gallery.
+
+Johnson is the companion inside Remember. He appears as an illustrated fox and is designed to feel more like someone you know than a conventional assistant. You can talk to him through a familiar video-call interface, ask about anything saved in Remember, or use everyday language to control connected lights, climate, and scenes at home. His personality and way of speaking can be changed, and—with permission—his voice can be based on a chosen reference.
+
+Remember is private by default and can be installed as a PWA. Password access, local photo storage, thumbnails, and authenticated sessions are all included in the repository.
 
 ## Run locally
 
