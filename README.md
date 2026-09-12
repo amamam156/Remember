@@ -2,7 +2,7 @@
   <img src="frontend/public/remember-mark.svg" width="92" alt="Remember logo" />
   <h1>Remember</h1>
   <p><strong>A quiet, self-hosted home for photos, places, and the stories between them.</strong></p>
-  <p>Visual memory journal · Interactive map · Private by default</p>
+  <p>Visual memory journal · Interactive map · Johnson digital person · Private by default</p>
 </div>
 
 ![Remember memory feed](docs/screenshots/feed.png)
@@ -17,18 +17,27 @@ Remember turns a camera roll into a browsable story. Add a date, place, note, an
 | --- | --- |
 | ![A masonry feed of illustrated memories](docs/screenshots/feed.png) | ![Places connected to memories](docs/screenshots/map.png) |
 
-| Private sign-in | Memory details |
+| Featured multi-photo memory | Johnson video-call demo |
 | --- | --- |
-| ![Remember sign-in with the new bookmark mark](docs/screenshots/login.png) | ![A memory with its date, place and story](docs/screenshots/detail.png) |
+| ![A full-screen portrait cover with a five-photo gallery](docs/screenshots/detail.png) | ![A simulated video conversation with Johnson](docs/screenshots/johnson.png) |
+
+| Private sign-in | Map memory card |
+| --- | --- |
+| ![Remember sign-in with the new bookmark mark](docs/screenshots/login.png) | ![A map with memory markers and an illustrated memory card](docs/screenshots/map.png) |
 
 ## What it does
 
 - Builds a responsive, image-first timeline with multi-photo memories and tags.
-- Connects memories to countries, regions, cities, coordinates, and an interactive globe.
+- Connects memories to countries, regions, cities, coordinates, and an interactive globe with photo-rich memory cards.
 - Keeps hotel stays, room-card photos, and trip notes beside the moments they belong to.
 - Supports private password access, JWT sessions, local uploads, thumbnails, and PWA installation.
-- Includes an optional showcase dataset with eight fictional memories and four original cartoon scenes.
-- Leaves the existing AI digital-person experience, Johnson, as the project's dedicated AI interaction rather than adding a second assistant interface.
+- Includes an optional showcase dataset with twelve fictional memories across North America, Europe, North Africa, Iceland, and Japan.
+- Supports multi-photo memories; the featured Tokyo entry uses a full-screen portrait cover followed by four gallery images.
+- Presents Johnson as the dedicated AI digital-person experience, with a camera preview and familiar video-call controls.
+
+## Johnson demo mode
+
+Johnson's backend is currently disabled, so the repository ships a clearly labeled local simulation for product presentation. It recreates the intended live-call experience—digital-person video, local camera preview, captions, microphone and camera toggles, speaker control, and end-call action—without claiming that a live AI connection is active.
 
 ## Run locally
 

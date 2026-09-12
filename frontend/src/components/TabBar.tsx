@@ -1,8 +1,15 @@
 import { useNavigate, useLocation } from 'react-router-dom'
-import { Menu, X, Calendar, MapPin, Plus } from 'lucide-react'
+import { Menu, X, Calendar, MapPin, Plus, Video } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 
 const MENU_ITEMS = [
+  {
+    label: 'Call Johnson',
+    sublabel: 'AI digital person · Demo',
+    icon: Video,
+    iconBg: 'bg-cyan-500',
+    href: '/johnson',
+  },
   {
     label: 'Add memory',
     sublabel: 'Save a new moment',

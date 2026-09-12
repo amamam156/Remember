@@ -12,6 +12,7 @@ import HotelUpload from './pages/HotelUpload'
 import HotelDetail from './pages/HotelDetail'
 import HardTimes from './pages/HardTimes'
 import LocationManagement from './pages/LocationManagement'
+import JohnsonCall from './pages/JohnsonCall'
 import ProtectedRoute from './components/ProtectedRoute'
 import TopNav from './components/TopNav'
 import TabBar from './components/TabBar'
@@ -68,6 +69,7 @@ function AppContent() {
     if (location.pathname === '/apps/hard-times') return 'none'
     // Locations页面使用自定义导航，隐藏默认TopNav
     if (location.pathname === '/location-management') return 'none'
+    if (location.pathname === '/johnson') return 'none'
     // 所有其他页面使用默认TopNav
     return 'default'
   }
@@ -80,6 +82,7 @@ function AppContent() {
      if (location.pathname.startsWith('/hotel/')) return false;
      if (location.pathname === '/apps/hard-times') return false;
      if (location.pathname === '/location-management') return false;
+     if (location.pathname === '/johnson') return false;
      return true;
   }
   
@@ -161,6 +164,7 @@ function AppContent() {
 
           <Route path="/apps/hard-times" element={<ProtectedRoute><HardTimes /></ProtectedRoute>} />
           <Route path="/location-management" element={<ProtectedRoute><LocationManagement /></ProtectedRoute>} />
+          <Route path="/johnson" element={<ProtectedRoute><JohnsonCall /></ProtectedRoute>} />
         </Routes>
       </main>
       

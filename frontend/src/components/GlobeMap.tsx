@@ -152,6 +152,10 @@ export default function GlobeMap({ photos }: GlobeMapProps) {
   )
 
   useEffect(() => {
+    if (!selectedLocation && locations.length > 0) setSelectedLocation(locations[0])
+  }, [locations, selectedLocation])
+
+  useEffect(() => {
     if (!containerRef.current || mapRef.current) return
 
     let cancelled = false
@@ -365,9 +369,11 @@ export default function GlobeMap({ photos }: GlobeMapProps) {
             onScroll={handleScroll}
           >
             {selectedLocation.photos.map(photo => {
-              const imageUrl = getImageUrl(photo.images?.[0]?.imageUrl || photo.imageUrl) || ''
-              const date = new Date(photo.happenedAt).toLocaleDateString('zh-CN', {
-                year: 'numeric', month: 'long', day: 'numeric'
+              const imageUrls = (photo.images?.length ? photo.images.map(image => image.imageUrl) : [photo.imageUrl])
+                .filter(Boolean).map(image => getImageUrl(image) || '')
+              const imageUrl = imageUrls[0] || ''
+              const date = new Date(photo.happenedAt).toLocaleDateString('en-US', {
+                year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
               })
               return (
                 <div
@@ -385,7 +391,10 @@ export default function GlobeMap({ photos }: GlobeMapProps) {
                     })
                   }}
                 >
-                  {imageUrl && <img src={imageUrl} alt={photo.title} className="relative z-10 h-24 w-20 rounded-2xl object-cover shadow-lg" />}
+                  {imageUrl && <div className="relative z-10 h-24 w-24 flex-shrink-0">
+                    {imageUrls.slice(0, 3).reverse().map((url, imageIndex) => <img key={url} src={url} alt={photo.title} className="absolute h-24 w-20 rounded-2xl border border-white/20 object-cover shadow-lg" style={{ left: `${(2-imageIndex)*6}px`, transform: `rotate(${(2-imageIndex)*3-3}deg)` }} />)}
+                    {imageUrls.length > 1 && <span className="absolute bottom-1 right-0 z-20 rounded-full bg-black/70 px-2 py-1 text-[9px] font-bold text-white">{imageUrls.length} photos</span>}
+                  </div>}
                   <div className="relative z-10 min-w-0 flex-1">
                     <span className="text-[10px] font-medium text-white/70">{date}</span>
                     <h3 className="line-clamp-1 text-lg font-bold text-white">{photo.title}</h3>

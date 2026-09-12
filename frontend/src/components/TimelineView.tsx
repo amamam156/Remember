@@ -189,9 +189,7 @@ const MemoryCard = memo(({ item, introDelay }: { item: Photo; introDelay?: strin
       <div className="absolute top-2 left-2 pointer-events-none z-20 flex items-center gap-1 bg-gradient-to-r from-pink-500/80 to-rose-500/80 px-2 py-1 rounded-lg shadow-sm border border-white/10">
         <Heart className="w-[10px] h-[10px] text-white fill-white" />
         <span className="text-[9px] font-bold text-white tracking-widest uppercase">
-          {item.loveDays !== undefined && item.loveDays < 0
-            ? `Together in ${Math.abs(item.loveDays)} days`
-            : `Together for ${item.loveDays ?? 0} days`}
+          {Math.abs(item.loveDays ?? 0)} days
         </span>
       </div>
 

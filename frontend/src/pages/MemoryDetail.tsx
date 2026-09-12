@@ -227,7 +227,7 @@ const TopControls = memo(({
                 <div className="flex items-center gap-1 bg-pink-500/40 px-2 py-0.5 rounded-full border border-pink-500/30">
                   <Heart className="w-2.5 h-2.5 text-pink-500 fill-pink-500" />
                   <span className="text-[10px] font-bold text-white/90 tracking-wider">
-                    {loveDays < 0 ? `Together in ${Math.abs(loveDays)} days` : `Together for ${loveDays} days`}
+                    {Math.abs(loveDays)} days
                   </span>
                 </div>
               )}
