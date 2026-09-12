@@ -5,8 +5,6 @@
   <p>Visual memory journal · Interactive map · Johnson digital person · Private by default</p>
 </div>
 
-![Remember memory feed](docs/screenshots/feed.png)
-
 Remember turns a camera roll into a browsable story. Add a date, place, note, and tags to each memory; then rediscover it through a visual feed, geographic map, or related moments. It is designed for personal hosting, with data and uploads staying on infrastructure you control.
 
 > The fox travelers and all sample entries shown here are fictional demo content. No personal photos or personal accounts are included.
@@ -36,12 +34,6 @@ Remember turns a camera roll into a browsable story. Add a date, place, note, an
 - Presents Johnson as a fictional fox digital person, with a local camera preview and familiar video-call controls.
 - Lets Johnson act as a natural-language smart-home companion for lights, climate, scenes, and other connected devices.
 - Supports voice-tone imitation for an approved reference voice, plus switchable personalities, tone, pacing, and speaking styles.
-
-## Johnson demo mode
-
-Johnson's backend is currently disabled, so the repository ships a clearly labeled local simulation for product presentation. It recreates the intended live-call experience—fox digital-person video, anonymous local camera preview, captions, microphone and camera toggles, speaker control, and end-call action—without claiming that a live AI connection is active.
-
-The product direction also includes permission-based smart-home control, reference-voice imitation, personality presets, and configurable tone and speaking style. Voice imitation is intended only for voices the user owns or has explicit permission to reproduce.
 
 ## Run locally
 
