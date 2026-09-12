@@ -28,7 +28,7 @@ Remember gives photos the context they usually lose. A memory can hold several i
 
 The included demo follows two fox characters through twelve fictional memories, from a spring picnic in New York to a lantern-lit night in Tokyo. The Tokyo story is the most complete example: it opens with a full-screen portrait cover and continues as a four-photo gallery.
 
-Johnson is the companion inside Remember. He appears as an illustrated fox and is designed to feel more like someone you know than a conventional assistant. You can talk to him through a familiar video-call interface, ask about anything saved in Remember, or use everyday language to control connected lights, climate, and scenes at home. His personality and way of speaking can be changed, and—with permission—his voice can be based on a chosen reference.
+Johnson is the companion inside Remember. You can talk to him through a familiar video-call interface, ask about anything saved in Remember, or use everyday language to control connected lights, climate, and scenes at home. His personality and way of speaking can be changed, and—with permission—his voice can be based on a chosen reference.
 
 Remember is private by default and can be installed as a PWA. Password access, local photo storage, thumbnails, and authenticated sessions are all included in the repository.
 
