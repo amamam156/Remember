@@ -7,7 +7,6 @@
 
 Remember turns a camera roll into a browsable story. Add a date, place, note, and tags to each memory; then rediscover it through a visual feed, geographic map, or related moments. It is designed for personal hosting, with data and uploads staying on infrastructure you control.
 
-> The fox travelers and all sample entries shown here are fictional demo content. No personal photos or personal accounts are included.
 
 ## See it in action
 
