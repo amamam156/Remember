@@ -33,11 +33,15 @@ Remember turns a camera roll into a browsable story. Add a date, place, note, an
 - Supports private password access, JWT sessions, local uploads, thumbnails, and PWA installation.
 - Includes an optional showcase dataset with twelve fictional memories across North America, Europe, North Africa, Iceland, and Japan.
 - Supports multi-photo memories; the featured Tokyo entry uses a full-screen portrait cover followed by four gallery images.
-- Presents Johnson as the dedicated AI digital-person experience, with a camera preview and familiar video-call controls.
+- Presents Johnson as a fictional fox digital person, with a local camera preview and familiar video-call controls.
+- Lets Johnson act as a natural-language smart-home companion for lights, climate, scenes, and other connected devices.
+- Supports voice-tone imitation for an approved reference voice, plus switchable personalities, tone, pacing, and speaking styles.
 
 ## Johnson demo mode
 
-Johnson's backend is currently disabled, so the repository ships a clearly labeled local simulation for product presentation. It recreates the intended live-call experience—digital-person video, local camera preview, captions, microphone and camera toggles, speaker control, and end-call action—without claiming that a live AI connection is active.
+Johnson's backend is currently disabled, so the repository ships a clearly labeled local simulation for product presentation. It recreates the intended live-call experience—fox digital-person video, anonymous local camera preview, captions, microphone and camera toggles, speaker control, and end-call action—without claiming that a live AI connection is active.
+
+The product direction also includes permission-based smart-home control, reference-voice imitation, personality presets, and configurable tone and speaking style. Voice imitation is intended only for voices the user owns or has explicit permission to reproduce.
 
 ## Run locally
 
