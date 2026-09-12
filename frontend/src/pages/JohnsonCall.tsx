@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowLeft, Camera, CameraOff, MessageCircle, Mic, MicOff, PhoneOff, Sparkles, UserRound, Volume2 } from 'lucide-react'
+import { ArrowLeft, Camera, CameraOff, MessageCircle, Mic, MicOff, PhoneOff, Sparkles, Volume2 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 export default function JohnsonCall() {
@@ -16,9 +16,8 @@ export default function JohnsonCall() {
       <button className="flex h-11 w-11 items-center justify-center rounded-full bg-black/35 backdrop-blur-xl"><MessageCircle className="h-5 w-5" /></button>
     </div>
 
-    {camera && <div className="absolute right-4 top-28 flex h-40 w-28 flex-col items-center justify-center overflow-hidden rounded-3xl border border-white/25 bg-gradient-to-br from-slate-600 via-slate-800 to-black shadow-2xl">
-      <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 30% 20%, #67e8f9 0, transparent 35%)' }} />
-      <UserRound className="relative h-12 w-12 text-white/75" strokeWidth={1.3} />
+    {camera && <div className="absolute right-4 top-28 flex h-40 w-28 flex-col items-center justify-center overflow-hidden rounded-3xl border border-white/25 bg-slate-900 shadow-2xl">
+      <img src="/demo/user-camera-fox.png" alt="Your illustrated fox camera preview" className="absolute inset-0 h-full w-full object-cover object-center" />
       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 px-3 py-2 text-[10px] font-semibold">You · Local preview</div>
     </div>}
 
